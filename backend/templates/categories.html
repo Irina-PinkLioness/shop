@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load custom_tags %}
+
+{% block title %}{% endblock title %}
+{% block content %}
+  <h1 style="color:red;text-align:center;">Categories:</h1>
+    <ul>
+      <h1>{{ category.name|title }}</h1>
+          {% for x in category %}
+          <li onclick="window.location = 'category/{{ x.id }}'">{{ x.name }}</li>
+          {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load custom_tags %}
+{% block title %}{% endblock title %}
+{% block content %}
+  <h1 style="color:red;text-align:center;">Manage products in store:</h1>
+  <div class="extra content">
+    <ul>
+      <li><a href="{% url 'add_product' %}">add product form:</a></li>
+    </ul>
+  </div>
+{% endblock %}

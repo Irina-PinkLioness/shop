@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load custom_tags %}
+{% block title %}{% endblock title %}
+{% block content %}
+<h1>{{ category.name }}</h1>
+<ul>
+    {% for product in category.products.all %}
+    <li>{{ product.name|title }} - {{ product.price|currency }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
+
+
+
+
+

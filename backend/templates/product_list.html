@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load custom_tags %}
+{% block title %}{% endblock title %}
+{% block content %}
+  <h1>All-Products-List:</h1>
+  {% if product_list %}
+<ul>
+    {% for product in product_list %}
+    <li style="color:red;text-align:center;">
+      <a href="{% url 'product' product.pk %}">{{ product.name }}</a> ({{ product.price|currency }})
+    </li>
+    {% endfor %}
+</ul>
+  {% endif %}
+{% endblock %}
+
+
+
+
+
+

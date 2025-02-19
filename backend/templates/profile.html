@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>PROFILE: {{ user.username }}</h2>
+<p>EMAIL: {{ user.email }}</p>
+<p>Your purchases:</p>
+   <ul>
+        {% for order in user.customer.orders.all %}
+        <li>{{ order.product.name }} - {{ order.quantity }} - {{ order.total_price }}</li>
+        {% endfor %}
+   </ul>
+{% endblock content %}

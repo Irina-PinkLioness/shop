@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load custom_tags %}
+{% block title %}{% endblock title %}
+{% block content %}
+<div class="mycard">
+    <h1>{{ product.name|title }}</h1>
+    <p>{{ product.description }}</p>
+    <p>Price: {{ product.price|currency }}</p>
+    <ul>
+        {% for x in products %}
+        <li onclick="window.location = 'details/{{ x.id }}'">{{ x.name }}</li>
+        {% endfor %}
+    </ul>
+</div>
+<ul>
+    <li><a href="{% url 'edit_product' product.pk %}">Edit Product</a></li>
+</ul>
+{% endblock %}
+

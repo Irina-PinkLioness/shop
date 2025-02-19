@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load custom_tags %}
+{% block title %}{% endblock title %}
+{% block content %}
+<h1 style="color:red;text-align:center;">Add Product</h1>
+<form method ='post'>
+  {% csrf_token %}
+  {{ form.as_div }}
+  <button type="submit">Save</button>
+</form>
+{% endblock content %}
