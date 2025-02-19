@@ -6,5 +6,5 @@ admin.site.site_header = 'On-line shop'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('backend.urls')),
+    path('api/', include('backend.urls'))
 ]
